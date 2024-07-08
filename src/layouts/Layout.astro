@@ -1,0 +1,43 @@
+---
+interface Props {
+  name?: string
+  description?: string
+  path?: string
+}
+
+const {name, description = 'Руководство по веб-плакатам', path = '/'} = Astro.props
+
+const siteName = name ? `${name} — ВЕБ ПЛАКАТ` : `ВЕБ ПЛАКАТ`
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{siteName}</title>
+    <meta name="title" content={siteName} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="hse, hse adc, hse design, adc web poster, web poster, веб плакат" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="bozzhik" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={'https://web-plakat.bozzhik.ru' + path} />
+    <meta property="og:title" content={siteName} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/og.png" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={'https://web-plakat.bozzhik.ru' + path} />
+    <meta property="og:title" content={siteName} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="/og.png" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
