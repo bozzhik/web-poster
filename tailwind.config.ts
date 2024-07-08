@@ -1,4 +1,5 @@
 import type {Config} from 'tailwindcss'
+import defaultTheme from 'tailwindcss/defaultTheme'
 import plugin from 'tailwindcss/plugin'
 
 const config = {
@@ -13,6 +14,12 @@ const config = {
       sm: {max: '428px'},
     },
     extend: {
+      fontFamily: {
+        sans: ['SuisseIntl', ...defaultTheme.fontFamily.sans],
+      },
+      fontWeight: {
+        book: '450',
+      },
       colors: {
         border: 'var(--border)',
         input: 'var(--input)',
