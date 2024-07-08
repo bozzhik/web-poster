@@ -5,11 +5,17 @@ interface Props {
   name?: string
   description?: string
   path?: string
+
+  width?: '1/2' | '4/5'
+  padding?: boolean
+  className?: string
 }
 
 const {name, description = 'Руководство по веб-плакатам', path = '/'} = Astro.props
-
 const siteName = name ? `${name} — ВЕБ ПЛАКАТ` : `ВЕБ ПЛАКАТ`
+
+const {width, padding, className} = Astro.props
+import Container from '#/Global/Container'
 ---
 
 <!doctype html>
@@ -40,6 +46,8 @@ const siteName = name ? `${name} — ВЕБ ПЛАКАТ` : `ВЕБ ПЛАКАТ
     <meta property="twitter:image" content="/og.png" />
   </head>
   <body class="bg-background text-foreground">
-    <slot />
+    <Container {width} {padding} {className}>
+      <slot />
+    </Container>
   </body>
 </html>
