@@ -9,5 +9,10 @@ export default defineConfig({
     open: true,
   },
   site: 'https://web-plakat.bozzhik.ru',
-  integrations: [tailwind(), react()],
+  integrations: [
+    tailwind({
+      applyBaseStyles: false,
+    }),
+    react(),
+  ],
 })
