@@ -21,10 +21,10 @@
     --popover: #ffffff;
     --popover-foreground: #070600;
 
-    --primary: #161616;
+    --primary: #fc4e2b;
     --primary-foreground: #f5faff;
 
-    --secondary: #f4f7fa;
+    --secondary: #161616;
     --secondary-foreground: #1d0f3f;
 
     --muted: #f4f7fa;
@@ -51,10 +51,10 @@
     --popover: #070600;
     --popover-foreground: #f5faff;
 
-    --primary: #f5faff;
+    --primary: #fc4e2b;
     --primary-foreground: #1d0f3f;
 
-    --secondary: #2c3440;
+    --secondary: #f5faff;
     --secondary-foreground: #f5faff;
 
     --muted: #2c3440;
