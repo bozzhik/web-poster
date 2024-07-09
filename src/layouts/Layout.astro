@@ -16,6 +16,7 @@ const siteName = name ? `${name} — ВЕБ ПЛАКАТ` : `ВЕБ ПЛАКАТ
 
 const {width, padding, className} = Astro.props
 import Container from '#/Global/Container'
+import Header from '#/Global/Header'
 ---
 
 <!doctype html>
@@ -45,7 +46,8 @@ import Container from '#/Global/Container'
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content="/og.png" />
   </head>
-  <body class="bg-background text-foreground">
+  <body class="relative font-sans bg-background text-foreground tracking-tight">
+    <Header {width} />
     <Container {width} {padding} {className}>
       <slot />
     </Container>
