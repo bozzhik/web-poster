@@ -1,5 +1,6 @@
 import {websitePaths} from '@/lib/constants'
-import {websiteBox} from './Container'
+import {websiteBox} from '#/Global/Container'
+import Theme from '#/Global/Theme'
 
 interface Props {
   width?: '1/2' | '4/5'
@@ -23,12 +24,16 @@ export default function Header({width = '4/5'}: Props) {
           </div>
         </div>
 
-        <div className="space-x-5 mt-[-3px] sm:mt-0 pr-2">
-          {Object.entries(socials).map(([key, {text, link}]) => (
-            <a href={link} className={`duration-200 hover:opacity-60 hover:underline ${key === 'habr' ? 'sm:hidden' : ''}`} key={key}>
-              {text}
-            </a>
-          ))}
+        <div className="flex gap-7 sm:gap-3 items-center mr-2 xl:mr-1 sm:mr-0">
+          <div className="space-x-5">
+            {Object.entries(socials).map(([key, {text, link}]) => (
+              <a href={link} className={`duration-200 hover:opacity-60 hover:underline ${key === 'habr' ? 'sm:hidden' : ''}`} key={key}>
+                {text}
+              </a>
+            ))}
+          </div>
+
+          <Theme />
         </div>
       </nav>
     </header>

@@ -12,11 +12,11 @@ export const websitePaths = {
     },
     socials: {
       habr: {
-        text: 'habr',
+        text: 'HABR',
         link: 'https://habr.com/ru/users/bozzhik/',
       },
       vc: {
-        text: 'vc.ru',
+        text: 'VC.RU',
         link: 'https://vc.ru/u/2724845-maks',
       },
     },
