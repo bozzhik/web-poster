@@ -1,9 +1,0 @@
-.GRID_BG {
-  background: linear-gradient(180deg, #60606050 25%, rgba(96, 96, 100, 0) 100%);
-  background-repeat: repeat;
-  background-blend-mode: luminosity;
-  -webkit-mask-image: url(/images/grid.svg);
-  mask-image: url(/images/grid.svg);
-  -webkit-mask-position: top center;
-  mask-position: top center;
-}
