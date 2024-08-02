@@ -10,7 +10,7 @@ interface Props {
 export const websiteBox = {
   default: 'mx-auto flex-auto',
   '1/2': '',
-  '4/5': 'mx-5 sm:mx-2',
+  '4/5': 'mx-5 sm:mx-3',
 }
 
 export default function Container({children, width = '4/5', padding = true, className}: Props) {
