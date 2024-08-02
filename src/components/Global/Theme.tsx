@@ -8,11 +8,14 @@ export default function Theme() {
     document.documentElement.classList.toggle('dark', isDarkMode)
   }, [isDarkMode])
 
-  const themeIconSize = 's-8 sm:s-6'
+  const themeSize = {
+    icon: 's-8 sm:s-6',
+    stroke: 1.7,
+  }
 
   return (
-    <div className="s-fit text-foreground cursor-pointer" onClick={() => setIsDarkMode((prevMode) => !prevMode)}>
-      {isDarkMode ? <Moon className={themeIconSize} /> : <Sun className={themeIconSize} />}
+    <div className="cursor-pointer rounded-[10px] p-1.5 bg-primary s-fit dark:!text-background !text-foreground" onClick={() => setIsDarkMode((prevMode) => !prevMode)}>
+      {isDarkMode ? <Moon className={themeSize.icon} strokeWidth={themeSize.stroke} /> : <Sun className={themeSize.icon} strokeWidth={themeSize.stroke} />}
     </div>
   )
 }

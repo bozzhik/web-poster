@@ -2,39 +2,41 @@ import {websitePaths} from '@/lib/constants'
 import {websiteBox} from '#/Global/Container'
 import Theme from '#/Global/Theme'
 
+import {cn} from '@/lib/utils'
+
 interface Props {
   width?: '1/2' | '4/5'
+}
+
+const HeaderLink: React.FC<{link: string; className?: string; children: React.ReactNode}> = ({link, className = '', children}) => {
+  return (
+    <a href={link} className={cn('duration-200 hover:text-neutral-400', className)}>
+      {children}
+    </a>
+  )
 }
 
 export default function Header({width = '4/5'}: Props) {
   const {main, socials} = websitePaths.header
 
   return (
-    <header className="fixed w-full pt-5 sm:pt-2 text-[22px] sm:text-lg font-book z-50">
-      <nav className={`flex items-center justify-between bg-item p-4 sm:p-1.5 rounded-[20px] sm:rounded-xl ${websiteBox[width]}`}>
-        <div className="flex items-center gap-8 sm:gap-3">
-          <a href="/" className="w-[70px] h-10 sm:w-14 sm:h-8 duration-300 rounded-[12px] sm:rounded-lg bg-primary hover:bg-primary-hover"></a>
+    <header className="fixed z-50 w-full pt-5 text-xl sm:pt-2 sm:text-lg">
+      <nav className={`flex items-center justify-between bg-item p-3 sm:p-1.5 rounded-2xl sm:rounded-xl ${websiteBox[width]}`}>
+        <div className="flex items-center gap-6 sm:gap-3">
+          <HeaderLink link="/" className="px-3 py-1.5 font-book duration-300 rounded-[10px] dark:!text-background !text-foreground bg-primary hover:scale-95">
+            веб-плакат
+          </HeaderLink>
 
-          <div className="space-x-5 sm:space-x-0 mt-[-3px] sm:mt-0">
+          <div className="space-x-4">
             {Object.entries(main).map(([key, {text, link}]) => (
-              <a href={link} className={`duration-200 hover:opacity-60 ${key === 'about' ? 'sm:hidden' : ''}`} key={key}>
+              <HeaderLink link={link} key={key}>
                 {text}
-              </a>
+              </HeaderLink>
             ))}
           </div>
         </div>
 
-        <div className="flex gap-7 sm:gap-3 items-center mr-2 xl:mr-1 sm:mr-0">
-          <div className="space-x-5">
-            {Object.entries(socials).map(([key, {text, link}]) => (
-              <a href={link} className={`duration-200 hover:opacity-60 hover:underline ${key === 'habr' ? 'sm:hidden' : ''}`} key={key}>
-                {text}
-              </a>
-            ))}
-          </div>
-
-          <Theme />
-        </div>
+        <Theme />
       </nav>
     </header>
   )
