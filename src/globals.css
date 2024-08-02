@@ -11,13 +11,13 @@
 
     --item: #dbdbdb;
 
-    --primary: #d1fd0a;
+    --primary: #8f64ff;
   }
 
   .dark {
     --background: #0a0a0a;
     --foreground: #ffffff;
 
-    --item: #141414;
+    --item: #151515;
   }
 }
