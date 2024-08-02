@@ -9,12 +9,12 @@ export default function Theme() {
   }, [isDarkMode])
 
   const themeSize = {
-    icon: 's-8 sm:s-6',
+    icon: 's-8 xl:s-7 sm:s-5',
     stroke: 1.7,
   }
 
   return (
-    <div className="cursor-pointer rounded-[10px] p-1.5 bg-primary s-fit dark:!text-background !text-foreground" onClick={() => setIsDarkMode((prevMode) => !prevMode)}>
+    <div className="cursor-pointer rounded-[10px] sm:rounded-lg p-1.5 bg-primary s-fit dark:!text-background !text-foreground" onClick={() => setIsDarkMode((prevMode) => !prevMode)}>
       {isDarkMode ? <Moon className={themeSize.icon} strokeWidth={themeSize.stroke} /> : <Sun className={themeSize.icon} strokeWidth={themeSize.stroke} />}
     </div>
   )

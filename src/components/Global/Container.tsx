@@ -14,7 +14,7 @@ export const websiteBox = {
 }
 
 export default function Container({children, width = '4/5', padding = true, className}: Props) {
-  const containerStyles = `${websiteBox.default} ${websiteBox[width]} ${padding ? 'pt-28 sm:pt-16' : ''}`
+  const containerStyles = `${websiteBox.default} ${websiteBox[width]} ${padding ? 'pt-28 xl:pt-24 sm:pt-16' : ''}`
 
   return <main className={cn(containerStyles, className)}>{children}</main>
 }
