@@ -17,7 +17,7 @@ const siteName = name ? `${name} — ВЕБ ПЛАКАТ` : `ВЕБ ПЛАКАТ
 const {width, padding, className} = Astro.props
 import Container from '#/Global/Container'
 import Header from '#/Global/Header'
-import Theme from '#/Global/Theme'
+import Analytics from '#/Global/Analytics.astro'
 ---
 
 <!doctype html>
@@ -47,10 +47,12 @@ import Theme from '#/Global/Theme'
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content="/og.png" />
   </head>
-  <body class="relative font-sans bg-background text-foreground tracking-tight">
+  <body class="relative font-sans tracking-tight bg-background text-foreground">
     <Header {width} client:idle />
     <Container {width} {padding} {className}>
       <slot />
     </Container>
+
+    {process.env.NODE_ENV === 'production' && <Analytics />}
   </body>
 </html>
