@@ -5,7 +5,7 @@
   --bg: #252525;
 }
 
-#html {
+.HIGLIGHTED {
   --base: var(--background);
   --light-gray: #555;
   --dark-gray: #555;
@@ -13,7 +13,7 @@
 }
 
 pre {
-  @apply p-4 xl:p-3 rounded-lg;
+  @apply p-4 rounded-lg xl:p-3 ring-neutral-500/15 ring-[1.5px];
   @apply text-base xl:text-sm;
 
   background-color: var(--bg) !important;

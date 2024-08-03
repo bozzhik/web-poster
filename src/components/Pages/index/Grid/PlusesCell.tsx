@@ -1,10 +1,11 @@
 import {useState, useEffect} from 'react'
 
-import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
-import * as syntaxTheme from '@/assets/stylesheets/syntax-theme.css'
-
 import {cn} from '@/lib/utils'
 import {child, gap} from '##/index/Grid'
+
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
+import * as syntaxTheme from '@/assets/stylesheets/syntax-theme.css'
+import copy from 'copy-to-clipboard'
 
 const blockStyles = 'bg-item rounded-2xl'
 
@@ -67,37 +68,47 @@ export default function PlusesCell() {
 
   function PlusesCellCode() {
     const codeData = {
-      html: `<div id="block">Блок</div>`,
-      css: `.block {
-  width: 100px;
-  background: purple;
-}`,
+      html: '<div id="block">Блок</div>',
+      css: '.block {\n  width: 100px;\n  background: purple;\n}',
       js: 'console.log("Клик!");',
     }
 
+    const [highlighted, setHighlighted] = useState('html')
+    const [copied, setCopied] = useState(false)
+
+    const handleCopy = (text, language) => {
+      copy(text, {format: 'text/plain'})
+      setCopied(true)
+      setHighlighted(language)
+      setTimeout(() => setCopied(false), 1500)
+    }
+
     const Code = ({language, className = '', children}) => (
-      <SyntaxHighlighter
-        id={language}
-        language={language} // lang
-        style={syntaxTheme}
-        className={className}
-      >
-        {children}
-      </SyntaxHighlighter>
+      <div onClick={() => handleCopy(children, language)} title="Click to copy" className={cn(highlighted == language ? 'HIGLIGHTED' : '')}>
+        <SyntaxHighlighter language={language} style={syntaxTheme} className={cn(language.toUpperCase(), className)}>
+          {children}
+        </SyntaxHighlighter>
+
+        {copied && highlighted === language && (
+          <span className="absolute left-0 z-20 grid w-full sm:hidden bottom-3 place-items-center">
+            <span className="px-3 py-1 text-white rounded-md bg-[#333]">Скопировано</span>
+          </span>
+        )}
+      </div>
     )
 
     return (
-      <div className={cn('row-span-6', 'p-5 pt-3 xl:p-3.5 xl:pt-2.5 sm:pt-3 space-y-5 sm:space-y-6', blockStyles)}>
+      <div className={cn('row-span-6', 'relative overflow-hidden p-5 pt-3 xl:p-3.5 xl:pt-2.5 sm:pt-3 space-y-5 sm:space-y-6', blockStyles)}>
         <h2 className="text-5xl xl:text-3xl !leading-[90%] font-book tracking-tight text-primary sm:text-center sm:!leading-none">весь код уже написан</h2>
 
-        <div className="sm:space-y-2">
-          <Code className="rotate-[-3deg] sm:rotate-0" language="css">
+        <div className="sm:space-y-2 [&>*]:cursor-pointer">
+          <Code className="rotate-[-3deg] hover:rotate-[-4deg] duration-300 sm:rotate-0" language="css">
             {codeData.css}
           </Code>
-          <Code className="rotate-[2deg] sm:rotate-0 mt-0.5 sm:mt-0" language="html">
+          <Code className="rotate-[2deg] hover:rotate-[0deg] duration-300 sm:rotate-0 mt-0.5 sm:mt-0" language="html">
             {codeData.html}
           </Code>
-          <Code className="rotate-[-3deg] sm:rotate-0" language="javascript">
+          <Code className="rotate-[-3deg] hover:rotate-[-5deg] duration-300 sm:rotate-0" language="javascript">
             {codeData.js}
           </Code>
         </div>
