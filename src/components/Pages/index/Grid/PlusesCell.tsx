@@ -1,7 +1,11 @@
 import {useState, useEffect} from 'react'
 
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
+import * as syntaxTheme from '@/assets/stylesheets/syntax-theme.css'
+
 import {cn} from '@/lib/utils'
 import {child, gap} from '##/index/Grid'
+
 const blockStyles = 'bg-item rounded-2xl'
 
 export default function PlusesCell() {
@@ -47,9 +51,9 @@ export default function PlusesCell() {
     }, [])
 
     return (
-      <div className={cn('row-span-4', 'p-5 pt-3 xl:p-3.5 xl:pt-2.5 sm:pt-3 flex flex-col gap-5 sm:gap-6 justify-between', blockStyles)}>
-        <h2 className="text-[40px] xl:text-[28px] sm:text-4xl text-primary !leading-[90%] sm:text-center sm:!leading-none">
-          уже разобрали <span className="hidden sm:inline">все</span> компоненты <br /> для тебя
+      <div className={cn('row-span-4', 'p-5 pt-3 xl:p-3.5 xl:pt-2.5 sm:pt-3 space-y-5 sm:space-y-6 justify-between', blockStyles)}>
+        <h2 className="text-[40px] xl:text-[28px] sm:text-3xl font-book tracking-tight text-primary !leading-[90%] sm:text-center sm:!leading-none">
+          уже разобрали <br className="hidden sm:block" /> <span className="hidden sm:inline">все</span> компоненты <br /> для тебя
         </h2>
 
         <div className="grid grid-cols-6 gap-2 xl:gap-1.5 overflow-hidden rounded-lg">
@@ -62,19 +66,47 @@ export default function PlusesCell() {
   }
 
   function PlusesCellCode() {
-    return (
-      <div className={cn('row-span-6', 'p-5 pt-3 xl:p-3.5 xl:pt-2.5 sm:pt-3', blockStyles)}>
-        <h2 className="text-5xl !leading-[90%]">весь код уже написан</h2>
+    const codeData = {
+      html: `<div id="block">Блок</div>`,
+      css: `.block {
+  width: 100px;
+  background: purple;
+}`,
+      js: 'console.log("Клик!");',
+    }
 
-        <div className="flex flex-col gap-3">
-          <mark>aaaa</mark>
+    const Code = ({language, className = '', children}) => (
+      <SyntaxHighlighter
+        id={language}
+        language={language} // lang
+        style={syntaxTheme}
+        className={className}
+      >
+        {children}
+      </SyntaxHighlighter>
+    )
+
+    return (
+      <div className={cn('row-span-6', 'p-5 pt-3 xl:p-3.5 xl:pt-2.5 sm:pt-3 space-y-5 sm:space-y-6', blockStyles)}>
+        <h2 className="text-5xl xl:text-3xl !leading-[90%] font-book tracking-tight text-primary sm:text-center sm:!leading-none">весь код уже написан</h2>
+
+        <div className="sm:space-y-2">
+          <Code className="rotate-[-3deg] sm:rotate-0" language="css">
+            {codeData.css}
+          </Code>
+          <Code className="rotate-[2deg] sm:rotate-0 mt-0.5 sm:mt-0" language="html">
+            {codeData.html}
+          </Code>
+          <Code className="rotate-[-3deg] sm:rotate-0" language="javascript">
+            {codeData.js}
+          </Code>
         </div>
       </div>
     )
   }
 
   return (
-    <div className={cn('grid grid-rows-10', [child.pluses, gap])}>
+    <div className={cn('grid grid-rows-10 sm:flex sm:flex-col', [child.pluses, gap])}>
       <PlusesCellBlocks />
       <PlusesCellCode />
     </div>

@@ -1,0 +1,49 @@
+:root {
+  --base: var(--primary);
+  --light-gray: #ccc;
+  --dark-gray: #555;
+  --bg: #252525;
+}
+
+#html {
+  --base: var(--background);
+  --light-gray: #555;
+  --dark-gray: #555;
+  --bg: var(--primary);
+}
+
+pre {
+  @apply p-4 xl:p-3 rounded-lg;
+  @apply text-base xl:text-sm;
+
+  background-color: var(--bg) !important;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  color: var(--base);
+}
+
+.token.console,
+.token.tag-id,
+.token.selector,
+.token.atrule-id,
+.token.tag,
+.token.unit,
+.token.number,
+.token.color {
+  color: var(--base);
+}
+
+span,
+.token.string,
+.token.punctuation {
+  color: var(--dark-gray);
+}
+
+.token.property,
+.token.attr-name,
+.token.attr-value.punctuation,
+.token.function {
+  color: var(--light-gray);
+}
