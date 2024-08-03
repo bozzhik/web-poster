@@ -1,5 +1,6 @@
 import {cn} from '@/lib/utils'
-import {HeroCell, PlusesCell} from '##/index/GridBlocks'
+import HeroCell from '##/index/Grid/HeroCell'
+import PlusesCell from '##/index/Grid/PlusesCell'
 
 const gridConfig = {
   core: 'grid-cols-10 grid-rows-10 sm:flex sm:flex-col',
@@ -13,7 +14,7 @@ const gridConfig = {
     docs: 'col-span-3 row-span-2',
     team: 'col-span-2 row-span-2',
   },
-  gap: 'gap-5 sm:gap-3',
+  gap: 'gap-5 xl:gap-4 sm:gap-3',
 }
 export const {core, child, gap} = gridConfig
 const blockStyles = 'grid place-items-center px-5 text-center font-book text-primary bg-item rounded-2xl text-xl sm:min-h-[15vh]'
