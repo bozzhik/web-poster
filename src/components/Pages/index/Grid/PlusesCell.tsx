@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react'
 import {cn} from '@/lib/utils'
 import {cell, gap, styles} from '##/index/Grid'
 
+import Heading from '#/UI/Heading'
 import Snippet from '#/UI/Snippet'
 
 export default function PlusesCell() {
@@ -49,10 +50,10 @@ export default function PlusesCell() {
     }, [])
 
     return (
-      <div className={cn('row-span-4', 'p-5 pt-3 xl:p-3 flex flex-col gap-5 justify-between', styles)}>
-        <h2 className="text-[40px] xl:text-[28px] sm:text-3xl font-book tracking-tight text-primary !leading-[90%] sm:text-center sm:!leading-none">
-          уже разобрали <br className="hidden sm:block" /> <span className="hidden sm:inline">все</span> компоненты <br /> для тебя
-        </h2>
+      <div className={cn('row-span-4', 'p-4 pt-3 xl:p-3 flex flex-col gap-5 justify-between', styles)}>
+        <Heading type="h2" className="sm:text-center">
+          уже разобрали <br className="hidden sm:block" /> <span className="hidden sm:inline">все</span> основные компоненты
+        </Heading>
 
         <div className="grid grid-cols-6 gap-2 xl:gap-1.5 overflow-hidden rounded-lg">
           {Array.from({length: numCells}).map((_, index) => (
@@ -72,15 +73,15 @@ export default function PlusesCell() {
 
     const Code = ({language, className = '', code}) => (
       <div className={className}>
-        <Snippet lang={language} className="[&>pre]:p-3 [&>pre]:rounded-lg [&>pre]:ring-neutral-500/25 [&>pre]:ring-[1.5px] text-lg xl:text-sm sm:text-base" code={code} />
+        <Snippet lang={language} className="[&>pre]:p-3 xl:[&>pre]:p-2 sm:[&>pre]:px-2.5 [&>pre]:rounded-lg [&>pre]:ring-neutral-500/25 [&>pre]:ring-[1.5px] text-lg xl:text-sm sm:text-base" code={code} />
       </div>
     )
 
     return (
-      <div className={cn('row-span-6', 'relative overflow-hidden p-5 pt-3 xl:p-3 sm:pb-4 flex flex-col gap-2 sm:gap-5 justify-between', styles)}>
-        <h2 className="text-5xl xl:text-3xl !leading-[90%] font-book tracking-tight text-primary sm:text-center sm:!leading-none">
-          весь код <br className="hidden sm:block" /> уже написан
-        </h2>
+      <div className={cn('row-span-6', 'relative overflow-hidden p-4 pt-3 xl:p-3 sm:pb-4 flex flex-col gap-2 sm:gap-5 justify-between', styles)}>
+        <Heading type="h2" className="sm:text-center">
+          весь код уже доступен для <br className="hidden sm:block" /> твоего проекта
+        </Heading>
 
         <div className="relative flex flex-col justify-center h-full mx-1 sm:gap-2">
           <Code className="rotate-[-3deg] hover:rotate-[-4deg] duration-300 sm:rotate-0" language="css" code={codeData.css} />

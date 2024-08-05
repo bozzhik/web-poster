@@ -1,6 +1,7 @@
 import {cn} from '@/lib/utils'
 import {cell, styles} from '##/index/Grid'
 
+import Heading from '#/UI/Heading'
 import HeroGridImage from '%/images/index/hero-grid.svg'
 import HeroDeviceImage from '%/images/index/hero-device.png'
 
@@ -8,13 +9,13 @@ export default function HeroCell() {
   return (
     <div className={cn('relative overflow-hidden', [cell.hero, styles])}>
       <div className="relative z-20 flex flex-col justify-between h-full p-6 pt-5 sm:gap-4 xl:p-5 xl:pt-4 sm:pb-3 sm:text-center">
-        <h1 className="font-bold !leading-[90%] tracking-tight text-primary uppercase text-[110px] xl:text-[85px] sm:text-6xl">
+        <Heading type="h1">
           Ваш <br /> плакат <br /> в вебе
-        </h1>
+        </Heading>
 
-        <h3 className="text-2xl !leading-tight tracking-normal xl:text-xl sm:text-lg font-book">
+        <h4 className="text-2xl !leading-tight tracking-normal xl:text-xl sm:text-lg font-book">
           Одностраничный сайт, сочетающий <br className="sm:hidden" /> дизайн плаката и&nbsp;веб-анимацию
-        </h3>
+        </h4>
       </div>
 
       <img className="absolute sm:relative sm:inset-auto sm:scale-110 top-0 z-10 object-cover h-full right-[-290px]" src={HeroDeviceImage.src} />
