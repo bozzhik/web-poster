@@ -17,7 +17,7 @@ const HeaderLink: React.FC<{link: string; className?: string; children: React.Re
 }
 
 export default function Header({width = '4/5'}: Props) {
-  const {main, socials} = websitePaths.header
+  const {main} = websitePaths.header
 
   return (
     <header className="fixed z-50 w-full pt-5 xl:pt-4 sm:pt-2">

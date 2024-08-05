@@ -25,7 +25,8 @@ export default function PlusesCell() {
       const moveSnake = () => {
         setSnake((prev) => {
           const head = prev[0]
-          let newHead
+          let newHead: number
+
           switch (getRandomDirection()) {
             case 'UP':
               newHead = (head - gridSize + numCells) % numCells
@@ -76,7 +77,7 @@ export default function PlusesCell() {
     const [highlighted, setHighlighted] = useState('html')
     const [copied, setCopied] = useState(false)
 
-    const handleCopy = (text, language) => {
+    const handleCopy = (text: string, language: string) => {
       copy(text, {format: 'text/plain'})
       setCopied(true)
       setHighlighted(language)
@@ -85,7 +86,7 @@ export default function PlusesCell() {
 
     const Code = ({language, className = '', children}) => (
       <div onClick={() => handleCopy(children, language)} title="Click to copy" className={cn(highlighted == language ? 'HIGLIGHTED' : '')}>
-        <SyntaxHighlighter language={language} style={syntaxTheme} className={cn(language.toUpperCase(), className)}>
+        <SyntaxHighlighter language={language} style={syntaxTheme as any} className={cn(language.toUpperCase(), className)}>
           {children}
         </SyntaxHighlighter>
 
