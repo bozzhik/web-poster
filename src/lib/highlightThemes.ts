@@ -1,20 +1,29 @@
+const themeColors = {
+  background: '#252525',
+  primary: '#8f64ff',
+  primary_code: '#bbb',
+  secondary_code: '#555',
+}
+
+const {background, primary, primary_code, secondary_code} = themeColors
+
 export const purpleTheme = {
   name: 'purple-theme',
   displayName: 'Purple Theme',
   colors: {
-    'activityBar.background': '#252525',
+    'activityBar.background': background,
     'activityBar.foreground': '#86A5FF',
     'activityBar.inactiveForeground': '#576dafc5',
     'activityBarBadge.background': '#86A5FF',
-    'activityBarBadge.foreground': '#252525',
+    'activityBarBadge.foreground': background,
     'badge.background': '#86A5FF',
-    'badge.foreground': '#252525',
+    'badge.foreground': background,
     'breadcrumb.activeSelectionForeground': '#86A5FF',
     'breadcrumb.focusForeground': '#576daf',
     'breadcrumb.foreground': '#576dafa6',
-    'breadcrumbPicker.background': '#252525',
+    'breadcrumbPicker.background': background,
     'button.background': '#86A5FF',
-    'button.foreground': '#252525',
+    'button.foreground': background,
     'button.hoverBackground': '#A8BEFF',
     descriptionForeground: '#576daf79',
     'diffEditor.diagonalFill': '#15182B',
@@ -22,7 +31,7 @@ export const purpleTheme = {
     'diffEditor.removedTextBackground': '#dd50742c',
     'dropdown.background': '#15182B',
     'dropdown.foreground': '#c7d5ff99',
-    'editor.background': '#252525',
+    'editor.background': background,
     'editor.findMatchBackground': '#576daf',
     'editor.findMatchHighlightBackground': '#262E47',
     'editor.inactiveSelectionBackground': '#262e47be',
@@ -33,17 +42,17 @@ export const purpleTheme = {
     'editorCodeLens.foreground': '#262E47',
     'editorCursor.background': '#01030b',
     'editorCursor.foreground': '#86A5FF',
-    'editorGroup.background': '#252525',
+    'editorGroup.background': background,
     'editorGroup.border': '#15182B',
     'editorGroup.dropBackground': '#0C0E19',
-    'editorGroup.emptyBackground': '#252525',
-    'editorGroupHeader.tabsBackground': '#252525',
+    'editorGroup.emptyBackground': background,
+    'editorGroupHeader.tabsBackground': background,
     'editorLineNumber.activeForeground': '#576dafd8',
     'editorLineNumber.foreground': '#262e47bb',
     'editorWidget.background': '#15182B',
     'editorWidget.border': '#576daf',
     'extensionButton.prominentBackground': '#C7D5FF',
-    'extensionButton.prominentForeground': '#252525',
+    'extensionButton.prominentForeground': background,
     focusBorder: '#262E47',
     foreground: '#576daf',
     'gitDecoration.addedResourceForeground': '#64d389fd',
@@ -57,7 +66,7 @@ export const purpleTheme = {
     'inputOption.activeForeground': '#86A5FF',
     'inputValidation.errorBackground': '#dd5073',
     'inputValidation.errorBorder': '#dd5073',
-    'inputValidation.errorForeground': '#252525',
+    'inputValidation.errorForeground': background,
     'list.activeSelectionBackground': '#000000',
     'list.activeSelectionForeground': '#86A5FF',
     'list.dropBackground': '#000000',
@@ -84,27 +93,27 @@ export const purpleTheme = {
     'scrollbarSlider.background': '#262E47',
     'scrollbarSlider.hoverBackground': '#576daf',
     'selection.background': '#01030b',
-    'sideBar.background': '#252525',
+    'sideBar.background': background,
     'sideBar.border': '#15182B',
-    'sideBarSectionHeader.background': '#252525',
+    'sideBarSectionHeader.background': background,
     'sideBarSectionHeader.foreground': '#86A5FF',
     'statusBar.background': '#86A5FF',
     'statusBar.debuggingBackground': '#c778db',
-    'statusBar.foreground': '#252525',
-    'tab.activeBackground': '#252525',
+    'statusBar.foreground': background,
+    'tab.activeBackground': background,
     'tab.activeBorder': '#86A5FF',
     'tab.activeForeground': '#C7D5FF',
-    'tab.border': '#252525',
-    'tab.inactiveBackground': '#252525',
+    'tab.border': background,
+    'tab.inactiveBackground': background,
     'tab.inactiveForeground': '#576dafd8',
     'terminal.ansiBrightRed': '#dd5073',
     'terminal.ansiGreen': '#63eb90',
     'terminal.ansiRed': '#dd5073',
     'terminal.foreground': '#A8BEFF',
     'textLink.foreground': '#86A5FF',
-    'titleBar.activeBackground': '#252525',
+    'titleBar.activeBackground': background,
     'titleBar.activeForeground': '#86A5FF',
-    'titleBar.inactiveBackground': '#252525',
+    'titleBar.inactiveBackground': background,
     'tree.indentGuidesStroke': '#576daf',
     'widget.shadow': '#01030b',
   },
@@ -119,7 +128,7 @@ export const purpleTheme = {
     {
       scope: ['variable', 'string constant.other.placeholder'],
       settings: {
-        foreground: '#EEFFFF',
+        foreground: primary,
       },
     },
     {
@@ -143,61 +152,61 @@ export const purpleTheme = {
     {
       scope: ['keyword.control', 'constant.other.color', 'punctuation', 'meta.tag', 'punctuation.definition.tag', 'punctuation.separator.inheritance.php', 'punctuation.definition.tag.html', 'punctuation.definition.tag.begin.html', 'punctuation.definition.tag.end.html', 'punctuation.section.embedded', 'keyword.other.template', 'keyword.other.substitution'],
       settings: {
-        foreground: '#89DDFF',
+        foreground: secondary_code,
       },
     },
     {
       scope: ['entity.name.tag', 'meta.tag.sgml', 'markup.deleted.git_gutter'],
       settings: {
-        foreground: '#f07178',
+        foreground: primary,
       },
     },
     {
       scope: ['entity.name.function', 'meta.function-call', 'variable.function', 'support.function', 'keyword.other.special-method'],
       settings: {
-        foreground: '#82AAFF',
+        foreground: primary_code,
       },
     },
     {
       scope: ['meta.block variable.other'],
       settings: {
-        foreground: '#f07178',
+        foreground: primary_code,
       },
     },
     {
       scope: ['support.other.variable', 'string.other.link'],
       settings: {
-        foreground: '#f07178',
+        foreground: primary_code,
       },
     },
     {
       scope: ['constant.numeric', 'constant.language', 'support.constant', 'constant.character', 'constant.escape', 'variable.parameter', 'keyword.other.unit', 'keyword.other'],
       settings: {
-        foreground: '#F78C6C',
+        foreground: primary,
       },
     },
     {
       scope: ['string', 'constant.other.symbol', 'constant.other.key', 'entity.other.inherited-class', 'markup.heading', 'markup.inserted.git_gutter', 'meta.group.braces.curly constant.other.object.key.js string.unquoted.label.js'],
       settings: {
-        foreground: '#C3E88D',
+        foreground: primary_code,
       },
     },
     {
       scope: ['entity.name', 'support.type', 'support.class', 'support.orther.namespace.use.php', 'meta.use.php', 'support.other.namespace.php', 'markup.changed.git_gutter', 'support.type.sys-types'],
       settings: {
-        foreground: '#FFCB6B',
+        foreground: secondary_code,
       },
     },
     {
       scope: ['support.type'],
       settings: {
-        foreground: '#B2CCD6',
+        foreground: primary_code,
       },
     },
     {
       scope: ['source.css support.type.property-name', 'source.sass support.type.property-name', 'source.scss support.type.property-name', 'source.less support.type.property-name', 'source.stylus support.type.property-name', 'source.postcss support.type.property-name'],
       settings: {
-        foreground: '#B2CCD6',
+        foreground: primary_code,
       },
     },
     {
@@ -236,13 +245,13 @@ export const purpleTheme = {
       scope: ['text.html.basic entity.other.attribute-name.html', 'text.html.basic entity.other.attribute-name'],
       settings: {
         fontStyle: 'italic',
-        foreground: '#FFCB6B',
+        foreground: secondary_code,
       },
     },
     {
       scope: ['entity.other.attribute-name.class'],
       settings: {
-        foreground: '#FFCB6B',
+        foreground: primary,
       },
     },
     {
@@ -272,13 +281,13 @@ export const purpleTheme = {
     {
       scope: ['string.regexp'],
       settings: {
-        foreground: '#89DDFF',
+        foreground: secondary_code,
       },
     },
     {
       scope: ['constant.character.escape'],
       settings: {
-        foreground: '#89DDFF',
+        foreground: secondary_code,
       },
     },
     {
@@ -310,13 +319,13 @@ export const purpleTheme = {
     {
       scope: ['source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json'],
       settings: {
-        foreground: '#FFCB6B',
+        foreground: secondary_code,
       },
     },
     {
       scope: ['source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json'],
       settings: {
-        foreground: '#F78C6C',
+        foreground: primary,
       },
     },
     {
@@ -340,7 +349,7 @@ export const purpleTheme = {
     {
       scope: ['source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json'],
       settings: {
-        foreground: '#f07178',
+        foreground: primary_code,
       },
     },
     {
@@ -358,7 +367,7 @@ export const purpleTheme = {
     {
       scope: ['text.html.markdown', 'punctuation.definition.list_item.markdown'],
       settings: {
-        foreground: '#EEFFFF',
+        foreground: primary,
       },
     },
     {
@@ -383,28 +392,28 @@ export const purpleTheme = {
       scope: ['markup.italic'],
       settings: {
         fontStyle: 'italic',
-        foreground: '#f07178',
+        foreground: primary_code,
       },
     },
     {
       scope: ['markup.bold', 'markup.bold string'],
       settings: {
         fontStyle: 'bold',
-        foreground: '#f07178',
+        foreground: primary_code,
       },
     },
     {
       scope: ['markup.bold markup.italic', 'markup.italic markup.bold', 'markup.quote markup.bold', 'markup.bold markup.italic string', 'markup.italic markup.bold string', 'markup.quote markup.bold string'],
       settings: {
         fontStyle: 'bold',
-        foreground: '#f07178',
+        foreground: primary_code,
       },
     },
     {
       scope: ['markup.underline'],
       settings: {
         fontStyle: 'underline',
-        foreground: '#F78C6C',
+        foreground: primary,
       },
     },
     {
@@ -434,7 +443,7 @@ export const purpleTheme = {
     {
       scope: ['constant.other.reference.link.markdown'],
       settings: {
-        foreground: '#FFCB6B',
+        foreground: secondary_code,
       },
     },
     {
@@ -458,7 +467,7 @@ export const purpleTheme = {
     {
       scope: ['markup.raw.block.fenced.markdown', 'variable.language.fenced.markdown', 'punctuation.section.class.end'],
       settings: {
-        foreground: '#EEFFFF',
+        foreground: primary,
       },
     },
     {
@@ -477,7 +486,7 @@ export const purpleTheme = {
     {
       scope: ['markup.table'],
       settings: {
-        foreground: '#EEFFFF',
+        foreground: primary,
       },
     },
   ],
