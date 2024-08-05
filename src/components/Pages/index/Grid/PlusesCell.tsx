@@ -1,11 +1,9 @@
 import {useState, useEffect} from 'react'
 
 import {cn} from '@/lib/utils'
-import {child, gap} from '##/index/Grid'
+import {cell, gap, styles} from '##/index/Grid'
 
 import Snippet from '#/UI/Snippet'
-
-const blockStyles = 'bg-item rounded-2xl'
 
 export default function PlusesCell() {
   function PlusesCellBlocks() {
@@ -51,7 +49,7 @@ export default function PlusesCell() {
     }, [])
 
     return (
-      <div className={cn('row-span-4', 'p-5 pt-3 xl:p-3 flex flex-col gap-5 justify-between', blockStyles)}>
+      <div className={cn('row-span-4', 'p-5 pt-3 xl:p-3 flex flex-col gap-5 justify-between', styles)}>
         <h2 className="text-[40px] xl:text-[28px] sm:text-3xl font-book tracking-tight text-primary !leading-[90%] sm:text-center sm:!leading-none">
           уже разобрали <br className="hidden sm:block" /> <span className="hidden sm:inline">все</span> компоненты <br /> для тебя
         </h2>
@@ -79,7 +77,7 @@ export default function PlusesCell() {
     )
 
     return (
-      <div className={cn('row-span-6', 'relative overflow-hidden p-5 pt-3 xl:p-3 sm:pb-4 flex flex-col gap-2 sm:gap-5 justify-between', blockStyles)}>
+      <div className={cn('row-span-6', 'relative overflow-hidden p-5 pt-3 xl:p-3 sm:pb-4 flex flex-col gap-2 sm:gap-5 justify-between', styles)}>
         <h2 className="text-5xl xl:text-3xl !leading-[90%] font-book tracking-tight text-primary sm:text-center sm:!leading-none">
           весь код <br className="hidden sm:block" /> уже написан
         </h2>
@@ -94,7 +92,7 @@ export default function PlusesCell() {
   }
 
   return (
-    <div className={cn('grid grid-rows-10 sm:flex sm:flex-col', [child.pluses, gap])}>
+    <div className={cn('grid grid-rows-10 sm:flex sm:flex-col', [cell.pluses, gap])}>
       <PlusesCellBlocks />
       <PlusesCellCode />
     </div>

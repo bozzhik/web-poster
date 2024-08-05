@@ -1,13 +1,12 @@
 import {cn} from '@/lib/utils'
-import {child, gap} from '##/index/Grid'
-const blockStyles = 'bg-item rounded-2xl'
+import {cell, styles} from '##/index/Grid'
 
 import HeroGridImage from '%/images/index/hero-grid.svg'
 import HeroDeviceImage from '%/images/index/hero-device.png'
 
 export default function HeroCell() {
   return (
-    <div className={cn('relative overflow-hidden', [child.hero, gap, blockStyles])}>
+    <div className={cn('relative overflow-hidden', [cell.hero, styles])}>
       <div className="relative z-20 flex flex-col justify-between h-full p-6 pt-5 sm:gap-4 xl:p-5 xl:pt-4 sm:pb-3 sm:text-center">
         <h1 className="font-bold !leading-[90%] tracking-tight text-primary uppercase text-[110px] xl:text-[85px] sm:text-6xl">
           Ваш <br /> плакат <br /> в вебе
