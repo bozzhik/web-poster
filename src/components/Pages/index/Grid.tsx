@@ -2,6 +2,7 @@ import {cn} from '@/lib/utils'
 import HeroCell from '##/index/Grid/HeroCell'
 import PlusesCell from '##/index/Grid/PlusesCell'
 import LinksCell from '##/index/Grid/LinksCell'
+import ShowCell from '##/index/Grid/ShowCell'
 
 const gridConfig = {
   core: 'grid-cols-10 grid-rows-10 sm:flex sm:flex-col',
@@ -30,7 +31,7 @@ export default function Grid() {
       <div className={cn(cell.builder, blockStyles)}>большой плакат-конструктор</div>
 
       <LinksCell />
-      <div className={cn(cell.showcase, blockStyles)}>витрина веб-плакатов с фильтрами</div>
+      <ShowCell />
       <div className={cn(cell.docs, blockStyles)}>документация</div>
       <div className={cn(cell.team, blockStyles)}>о команде</div>
     </section>

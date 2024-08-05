@@ -9,7 +9,7 @@ interface Props {
 
 const Button: React.FC<Props> = ({href, blank, children, className, ...buttonProps}) => {
   return (
-    <a {...buttonProps} href={href} {...(blank && {target: '_blank'})} className={cn('block w-fit px-5 py-2 text-xl text-center font-book text-white bg-primary rounded-[10px] cursor-pointer hover:opacity-90 duration-200', className)}>
+    <a className={cn('block w-fit px-5 py-2 text-xl text-center font-book text-background bg-primary rounded-[10px] cursor-pointer hover:opacity-85 duration-200', className)} href={href} {...(blank && {target: '_blank'})} {...buttonProps}>
       {children}
     </a>
   )

@@ -1,10 +1,11 @@
 import {cn} from '@/lib/utils'
 import {cell, styles} from '##/index/Grid'
 
+import Heading from '@/components/UI/Heading'
+
 import GithubImage from '%/images/index/github-logo.svg'
 import FigmaImage from '%/images/index/figma-logo.svg'
 import LinksGridImage from '%/images/index/links-grid.svg'
-import Heading from '@/components/UI/Heading'
 
 const linksData = {
   github: {
