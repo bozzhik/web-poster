@@ -1,9 +1,11 @@
 import {cn} from '@/lib/utils'
 import {cell, styles} from '##/index/Grid'
 
+import Image from 'next/image'
 import Heading from '#/UI/Heading'
-import HeroGridImage from '%/images/index/hero-grid.svg'
-import HeroDeviceImage from '%/images/index/hero-device.png'
+
+import HeroGridImage from '%/index/hero-grid.svg'
+import HeroDeviceImage from '%/index/hero-device.png'
 
 export default function HeroCell() {
   return (
@@ -18,8 +20,8 @@ export default function HeroCell() {
         </h4>
       </div>
 
-      <img className="absolute sm:relative sm:inset-auto sm:scale-110 top-0 z-10 object-cover h-full right-[-290px]" src={HeroDeviceImage.src} />
-      <img className="absolute top-0 object-cover w-full h-full" src={HeroGridImage.src} />
+      <Image className="absolute sm:relative sm:inset-auto sm:scale-110 top-0 z-10 object-cover h-full right-[-290px]" src={HeroDeviceImage} alt="" />
+      <Image className="absolute top-0 object-cover w-full h-full" src={HeroGridImage} alt="" />
 
       <div className="absolute z-10 bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/15 via-black/10 to-[#25252501]"></div>
     </div>

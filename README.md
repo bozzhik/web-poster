@@ -4,7 +4,7 @@
 
 <p align="center"><em>The <kbd>web-poster</kbd> category on the website <a href="http://hsedesign.ru">hsedesign.ru</a></em></p>
 
-- **Framework**: [Astro.js](https://astro.build/)
+- **Framework**: [Next.js](https://nextjs.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com)
 - **Deployment**: [Vercel](https://vercel.com)
 - **Analytics**: [Yandex Metrika](https://metrika.yandex.ru/promo/product)

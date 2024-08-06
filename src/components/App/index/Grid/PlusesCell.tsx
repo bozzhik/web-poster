@@ -1,10 +1,11 @@
+'use client'
+
 import {useState, useEffect} from 'react'
 
 import {cn} from '@/lib/utils'
 import {cell, gap, styles} from '##/index/Grid'
 
 import Heading from '#/UI/Heading'
-import Snippet from '#/UI/Snippet'
 
 export default function PlusesCell() {
   function PlusesCellBlocks() {
@@ -65,29 +66,11 @@ export default function PlusesCell() {
   }
 
   function PlusesCellCode() {
-    const codeData = {
-      html: '<div id="block">Блок</div>',
-      css: '.block {\n  width: 100px;\n  height: 100px;\n  background: purple;\n}',
-      js: 'console.log("Клик!");',
-    }
-
-    const Code = ({language, className = '', code}) => (
-      <div className={className}>
-        <Snippet lang={language} className="[&>pre]:p-3 xl:[&>pre]:p-2 sm:[&>pre]:px-2.5 [&>pre]:rounded-lg [&>pre]:ring-neutral-500/25 [&>pre]:ring-[1.5px] text-lg xl:text-sm sm:text-base" code={code} />
-      </div>
-    )
-
     return (
       <div className={cn('row-span-6', 'relative overflow-hidden p-4 pt-3 xl:p-3 sm:pb-4 flex flex-col gap-2 sm:gap-5 justify-between', styles)}>
         <Heading type="h2" className="sm:text-center">
           весь код уже доступен для <br className="hidden sm:block" /> твоего проекта
         </Heading>
-
-        <div className="relative flex flex-col justify-center h-full mx-1 sm:gap-2">
-          <Code className="rotate-[-3deg] hover:rotate-[-4deg] duration-300 sm:rotate-0" language="css" code={codeData.css} />
-          <Code className="rotate-[2deg] hover:rotate-[0deg] duration-300 sm:rotate-0 mt-1.5 sm:mt-0" language="html" code={codeData.html} />
-          <Code className="rotate-[-3deg] hover:rotate-[-5deg] duration-300 sm:rotate-0" language="javascript" code={codeData.js} />
-        </div>
       </div>
     )
   }

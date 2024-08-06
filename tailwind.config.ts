@@ -1,10 +1,10 @@
 import type {Config} from 'tailwindcss'
-import defaultTheme from 'tailwindcss/defaultTheme'
 import plugin from 'tailwindcss/plugin'
+import {fontFamily} from 'tailwindcss/defaultTheme'
 
 const config = {
   darkMode: ['class'],
-  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  content: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './app/**/*.{ts,tsx}', './src/**/*.{ts,tsx}'],
   prefix: '',
   theme: {
     screens: {
@@ -15,10 +15,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ['SuisseIntl', ...defaultTheme.fontFamily.sans],
-      },
-      fontWeight: {
-        book: '450',
+        sans: ['var(--font-suisse-intl)', ...fontFamily.sans],
       },
       colors: {
         background: 'var(--background)',
